@@ -11,8 +11,9 @@ import json
 import traceback
 import feedparser
 
-from PIL import Image, ImageTk
-from contextlib import contextmanager
+from PIL import ImageTK
+image = image.resize((25, 25), Image.Resampling.LANCZOS)
+
 
 LOCALE_LOCK = threading.Lock()
 
@@ -172,7 +173,8 @@ class Weather(Frame):
                 if self.icon != icon2:
                     self.icon = icon2
                     image = Image.open(icon2)
-                    image = image.resize((100, 100), Image.ANTIALIAS)
+                    image = image.resize((25, 25), Image.Resampling.LANCZOS)
+
                     image = image.convert('RGB')
                     photo = ImageTk.PhotoImage(image)
 
@@ -247,7 +249,7 @@ class NewsHeadline(Frame):
         Frame.__init__(self, parent, bg='black')
 
         image = Image.open("assets/Newspaper.png")
-        image = image.resize((25, 25), Image.ANTIALIAS)
+        image = image.resize((25, 25), Image.Resampling.LANCZOS)
         image = image.convert('RGB')
         photo = ImageTk.PhotoImage(image)
 
