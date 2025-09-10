@@ -67,11 +67,10 @@ Do you also want me to add your screenshots into the README automatically (using
 
 
 
-Ask ChatGPT
 
 
 
 
 
 
-ChatGPT can make mistakes. Check important info.
+
